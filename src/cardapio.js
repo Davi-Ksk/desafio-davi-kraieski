@@ -1,8 +1,9 @@
-export const itens = [
+export const cardapio = [
   {
     codigo: "cafe",
     descricao: "Café",
-    valor: 3
+    valor: 3,
+    adicional: null
   },
   {
     codigo: "chantily",
@@ -13,32 +14,38 @@ export const itens = [
   {
     codigo: "suco",
     descricao: "Suco Natural",
-    valor: 6.2
+    valor: 6.2,
+    adicional: null
   },
   {
     codigo: "sanduiche",
     descricao: "Sanduíche",
-    valor: 6.5
+    valor: 10,
+    adicional: null
   },
   {
     codigo: "queijo",
     descricao: "Queijo",
-    valor: 2
+    valor: 2,
+    adicional: "sanduiche"
   },
   {
     codigo: "salgado",
     descricao: "Salgado",
-    valor: 7.25
+    valor: 7.25,
+    adicional: null
   },
   {
     codigo: "combo1",
     descricao: "1 Suco e 1 Sanduíche",
-    valor: 9.5
+    valor: 9.5,
+    adicional: null
   },
   {
     codigo: "combo2",
     descricao: "1 Café e 1 Sanduíche",
-    valor: 7.5
+    valor: 7.5,
+    adicional: null
   }
 
 ]
