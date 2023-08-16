@@ -20,7 +20,7 @@ export const cardapio = [
   {
     codigo: "sanduiche",
     descricao: "Sanduíche",
-    valor: 10,
+    valor: 6.5,
     adicional: null
   },
   {

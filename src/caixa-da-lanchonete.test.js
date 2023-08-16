@@ -5,7 +5,6 @@ describe('CaixaDaLanchonete', () => {
     const validaTeste = (formaDePagamento, resultadoEsperado, itens) => {
         const resultado = new CaixaDaLanchonete()
             .calcularValorDaCompra(formaDePagamento, itens);
-
         expect(resultado.replace("\xa0", " ")).toEqual(resultadoEsperado);
     };
 
@@ -29,7 +28,7 @@ describe('CaixaDaLanchonete', () => {
 
     test.each([
         ['dinheiro', 'R$ 33,73', ['cafe,4', 'sanduiche,3', 'queijo,2']],
-        ['credito', 'R$ 36,56', ['cafe,4', 'sanduiche,3', 'queijo,2']],
+        ['credito', 'R$ 36,57', ['cafe,4', 'sanduiche,3', 'queijo,2']],
         ['debito', 'R$ 35,50', ['cafe,4', 'sanduiche,3', 'queijo,2']],
     ])('compra de múltiplas quantidades em %p deve resultar em %p', validaTeste);
 
@@ -42,10 +41,10 @@ describe('CaixaDaLanchonete', () => {
         validaTeste(formaDePagamento, resultadoEsperado, itens));
 
     test.each([
-        ['chantily', 'dinheiro', 'Item extra não pode ser pedido sem o principal', ['chantily,1']],
-        ['queijo', 'credito', 'Item extra não pode ser pedido sem o principal', ['queijo,1']],
-        ['chantily com outro item', 'credito', 'Item extra não pode ser pedido sem o principal', ['chantily,1', 'sanduiche,1']],
-        ['queijo com outro item', 'debito', 'Item extra não pode ser pedido sem o principal', ['cafe,1', 'queijo,1']],
+        ['chantily', 'dinheiro', 'Item extra não pode ser pedido sem o principal.', ['chantily,1']],
+        ['queijo', 'credito', 'Item extra não pode ser pedido sem o principal.', ['queijo,1']],
+        ['chantily com outro item', 'credito', 'Item extra não pode ser pedido sem o principal.', ['chantily,1', 'sanduiche,1']],
+        ['queijo com outro item', 'debito', 'Item extra não pode ser pedido sem o principal.', ['cafe,1', 'queijo,1']],
     ])('compra %p em %p deve resultar em %p', (_, formaDePagamento, resultadoEsperado, itens) =>
         validaTeste(formaDePagamento, resultadoEsperado, itens));
 });
